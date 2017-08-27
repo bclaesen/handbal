@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from datetime  import datetime, timedelta
 from icalendar import Calendar, Event
 import pytz
-from dateutil.parser import parse
+
 ###
 ###Get the matches
 ###
@@ -42,14 +42,13 @@ matches = [m for m in matches if m["Game"].find("R. Kiewit") != -1 and m["Game"]
 #29 okt 2017 is DST terug weg
 #25 maart 2018 is DST er weer
 cal = Calendar()
+fmt = "%d/%m/%y  %H:%M"
+tzone = pytz.timezone("Europe/Brussels")
 dststart = datetime(2017,10,29,2)
 dstend = datetime(2018,3,25,2)
 for m in matches:
     event = Event()
     event.add('summary', m["Game"])
-    fmt = "%d/%m/%y  %H:%M"
-
-    tzone = pytz.timezone("Europe/Brussels")
     dtstart = datetime.strptime(m["Date"],fmt)  
     #This math only works because I am running this in Brussels with DST
     if (dtstart-dststart) >= timedelta(hours=0) and (dstend-dtstart >= timedelta(hours=0)):
