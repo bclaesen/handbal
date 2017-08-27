@@ -7,6 +7,8 @@ Created on Sat Aug 26 11:29:07 2017
 from bs4 import BeautifulSoup
 from datetime  import datetime, timedelta
 from icalendar import Calendar, Event
+import pytz
+from dateutil.parser import parse
 ###
 ###Get the matches
 ###
@@ -31,21 +33,29 @@ for t in trs:
 ###
 matches = [m for m in matches if m["Game"].find("R. Kiewit") != -1 and m["Game"].find("bye ")==-1]
            
-for m in matches:
-    print("{}: {} // {}".format(m['Date'],m['Game'],m['Location']))
+#for m in matches:
+#    print("{}: {} // {}".format(m['Date'],m['Game'],m['Location']))
     
 ###
 ### Create calendar
 ###
+#29 okt 2017 is DST terug weg
+#25 maart 2018 is DST er weer
 cal = Calendar()
+dststart = datetime(2017,10,29,2)
+dstend = datetime(2018,3,25,2)
 for m in matches:
     event = Event()
     event.add('summary', m["Game"])
     fmt = "%d/%m/%y  %H:%M"
-    #26/11/17  17:30
-    #>>> datetime.datetime(2013, 9, 28, 20, 30, 55, 782000)
-    
-    dtstart = datetime.strptime(m["Date"],fmt)
+
+    tzone = pytz.timezone("Europe/Brussels")
+    dtstart = datetime.strptime(m["Date"],fmt)  
+    #This math only works because I am running this in Brussels with DST
+    if (dtstart-dststart) >= timedelta(hours=0) and (dstend-dtstart >= timedelta(hours=0)):
+        dtstart += timedelta(hours=1)
+    dtstart -= timedelta(hours=1)
+    dtstart = tzone.localize(dtstart)
     dtend = dtstart + timedelta(0,60*60)
     event.add('dtstart', dtstart)
     event.add('dtend', dtend)
