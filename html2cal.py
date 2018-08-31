@@ -51,9 +51,9 @@ for m in matches:
     event.add('summary', m["Game"])
     dtstart = datetime.strptime(m["Date"],fmt)  
     #This math only works because I am running this in Brussels with DST
-    if (dtstart-dststart) >= timedelta(hours=0) and (dstend-dtstart >= timedelta(hours=0)):
-        dtstart += timedelta(hours=1)
-    dtstart -= timedelta(hours=1)
+    #if (dtstart-dststart) >= timedelta(hours=0) and (dstend-dtstart >= timedelta(hours=0)):
+    #    dtstart += timedelta(hours=1)
+    #dtstart -= timedelta(hours=1)
     dtstart = tzone.localize(dtstart)
     dtend = dtstart + timedelta(0,60*60)
     event.add('dtstart', dtstart)
