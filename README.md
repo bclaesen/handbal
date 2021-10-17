@@ -4,6 +4,8 @@ Import handball games in your calender. Just download the html file from handbal
 
 [Competition Calender 2021](./handbal2021.ics)
 
+Please note that Cup Games are not included.
+
 ## Importing
 ### On iOS
 Opening a link such as [Competition Calender 2021](https://github.com/bclaesen/handbal/raw/master/handbal2021.ics) directly in Mobile Safari on your iPhone will bring up an import dialog. Brave will show this as flat text.
