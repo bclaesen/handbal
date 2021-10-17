@@ -6,7 +6,7 @@ Import handball games in your calender. Just download the html file from handbal
 
 ## Importing
 ### On iOS
-Opening a link such as [Competition Calender 2021](./handbal2021.ics) directly in Mobile Safari on your iPhone will bring up an import dialog. Brave will show this as flat text.
+Opening a link such as [Competition Calender 2021](https://github.com/bclaesen/handbal/raw/master/handbal2021.ics) directly in Mobile Safari on your iPhone will bring up an import dialog. Brave will show this as flat text.
 
 ### In Google Calender
 Click on add other calenders (+ icon) and either choose import, then upload the file from your computer. Or from url and provide the raw url.
