@@ -16,7 +16,7 @@ Click on add other calenders (+ icon) and either choose import, then upload the 
 
 ## Using the script
 ### Quirks and Bugs
-If the script cannot find any results, either the input format has changed, or you specified the wrong team name. Please try with a different team name using the `--name` option or let me know if you think the input format has changed.
+If the script cannot find any results, either the input format has changed, or you specified the wrong team name. Please try with a different team name using the `--teamname` option or let me know if you think the input format has changed.
 
 Default duration for a game is one hour.
 ### Installation dependencies
