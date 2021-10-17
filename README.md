@@ -10,3 +10,7 @@ Opening a link such as [Competition Calender 2021](https://github.com/bclaesen/h
 
 ### In Google Calender
 Click on add other calenders (+ icon) and either choose import, then upload the file from your computer. Or from url and provide the raw url.
+
+## Quirks and Bugs
+* Code should be cleaned for legacy check on DST
+* Empty calender output: the label for the Real Team may be updated (again), you can update this easily in the code.
