@@ -23,6 +23,7 @@ Default duration for a game is one hour.
 * Python >= 3.8 (tested on 3.8.10)
 * icalendar package (`pip3 install icalendar`)
 * result package (`pip3 install result`)
+* Beautiful Soup package (`pip3 install bs4`)
 ### Running from command line
 Make sure `html2cal.py` is marked as executable.
 ```
