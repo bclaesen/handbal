@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sat Aug 26 11:29:07 2017
@@ -15,7 +16,7 @@ def tidyR(s):
 ###
 ###Get the matches
 ###
-doc = open("competitiekalender2019.html")
+doc = open("competitiekalender2021.html")
 soup = BeautifulSoup(doc, 'html.parser')
 soup.find_all('a')
 #elke tr met 6 kinderen
@@ -37,7 +38,7 @@ for t in trs:
 ###
 ### Filter the matches
 ###
-matches = [m for m in matches if m["Game"].find(tidyR("REAL KIEWIT  (R) (R)")) != -1 and m["Game"].find("bye ")==-1]
+matches = [m for m in matches if m["Game"].find(tidyR("Real Kiewit (R) ")) != -1 and m["Game"].find("bye ")==-1]
            
 #for m in matches:
 #    print("{}: {} // {}".format(m['Date'],m['Game'],m['Location']))
