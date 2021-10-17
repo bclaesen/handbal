@@ -21,7 +21,7 @@ If the script cannot find any results, either the input format has changed, or y
 Default duration for a game is one hour.
 ### Installation dependencies
 * Python >= 3.8 (tested on 3.8.10)
-* icalendar package ([icalender download](https://pypi.org/project/icalendar/))
+* icalendar package (`pip3 install icalendar`)
 * result package (`pip3 install result`)
 ### Running from command line
 Make sure `html2cal.py` is marked as executable.
