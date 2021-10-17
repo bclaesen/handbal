@@ -1,6 +1,6 @@
 # Handbal: Convert handbal.be competition calender to iCal format.
 ## About
-Import handball games in your calender. Just download the html file from handbal.be and if you are a fan a Real Kiewit, you can use html2cal.py to convert to an ics. Even better you don't have to, because the files are already in the repository.
+Import handball games in your calender. Just download the html file from handbal.be and use html2cal.py to convert to an ics. If you are a true Real Kiewit fan, you don't even have to use the script. Just access it from the repository.
 
 [Real Kiewit Competition Calender 2021](./handbal2021.ics)
 
